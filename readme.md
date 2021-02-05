@@ -8,7 +8,89 @@
 electron-webbox --args url="https://www.processon.com/view/5f713035637689435ff04a39?fromnew=1" maximize icon=icon.png
 ```
 
-## **应用参数：**
+## ubuntu制作web应用
+
+### 百度翻译
+
+```properties
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=百度翻译
+Icon=/home/tc/.local/share/applications/baiduTranslate-icon.ico
+Exec=electron-webbox --args url="https://fanyi.baidu.com/" width=1360 height=700 resizable=false maximizable=false icon=/home/tc/.local/share/applications/baiduTranslate-icon.ico
+Comment=百度翻译;baidufanyi;baidu translate;translate;fanyi;
+Categories=web tools
+Terminal=false
+```
+
+![image-20210205180514677](img/readme/image-20210205180514677.png)
+
+![image-20210205175140703](img/readme/image-20210205175140703.png)
+
+### draw.io
+
+​	提示:  这个软件官网有客户端发行版，[地址入口](https://github.com/jgraph/drawio-desktop/releases/tag/v14.1.8)。
+
+```properties
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=draw.io
+Icon=/home/tc/.local/share/applications/drawio-icon.ico
+Exec=electron-webbox --args url=https://app.diagrams.net/ maximize icon=/home/tc/.local/share/applications/drawio-icon.ico
+Comment=draw.io；uml;paint
+Categories=web tools
+Terminal=false
+```
+
+![image-20210205180806792](img/readme/image-20210205180806792.png)
+
+![image-20210205174856836](img/readme/image-20210205174856836.png)
+
+
+
+## **扩展：**
+
+1.  使用google浏览器来完成类似的功能
+
+   针对这个问题，可以使用这种方式来使用
+
+   ```bash
+which google-chrome-stable
+   # /usr/bin/google-chrome-stable
+   # 安装google浏览器后
+   google-chrome-stable --help
+   
+   # 针对这个问题，可以使用这种方式来使用
+   google-chrome-stable --app=https://app.yinxiang.com/Login.action
+   ```
+   
+2. electron-webbox的作用就是将现成的网页应用通过这个软件包包装成类似桌面端的应用，然后在ubuntu中我可以通过ubuntu desktop发布成一个个Ubuntu应用程序。
+
+   /home/tc/.local/share/applications/yinxiangNote.desktop
+
+   或/usr/share/applications/yinxiangNote.desktop
+
+```properties
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=印象笔记
+Icon=/home/tc/.local/share/applications/yinxiangNote-icon.png
+Exec=google-chrome-stable --app='https://app.yinxiang.com/Login.action'
+Comment=ying xiang note;yingxiangnote;印象笔记
+Categories=web tools
+Terminal=false
+
+```
+
+![image-20210205161326514](img/readme/image-20210205161326514.png)
+
+![image-20210205161407478](img/readme/image-20210205161407478.png)
+
+
+## **electron-webbox应用参数：**
 
 maximize 最大化窗口
 
@@ -111,84 +193,3 @@ titleBarStyle String (optional) - The style of window title bar. Default is defa
 customButtonsOnHover Boolean (可选) - 在macOS的无框窗口上绘制自定义的关闭与最小化按钮. 除非鼠标悬停到窗口的左上角, 否则这些按钮不会显示出来. 这些自定义的按钮能防止, 与发生于标准的窗口工具栏按钮处的鼠标事件相关的问题. 注意: 此选项目前是实验性的。
 
 
-
-## ubuntu制作web应用
-
-### 百度翻译
-
-```properties
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=百度翻译
-Icon=/home/tc/.local/share/applications/baiduTranslate-icon.ico
-Exec=electron-webbox --args url="https://fanyi.baidu.com/" width=1360 height=700 resizable=false maximizable=false icon=/home/tc/.local/share/applications/baiduTranslate-icon.ico
-Comment=百度翻译;baidufanyi;baidu translate;translate;fanyi;
-Categories=web tools
-Terminal=false
-```
-
-![image-20210205180514677](img/readme/image-20210205180514677.png)
-
-![image-20210205175140703](img/readme/image-20210205175140703.png)
-
-### draw.io
-
-​	提示:  这个软件官网有客户端发行版，[地址入口](https://github.com/jgraph/drawio-desktop/releases/tag/v14.1.8)。
-
-```properties
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=draw.io
-Icon=/home/tc/.local/share/applications/drawio-icon.ico
-Exec=electron-webbox --args url=https://app.diagrams.net/ maximize icon=/home/tc/.local/share/applications/drawio-icon.ico
-Comment=draw.io；uml;paint
-Categories=web tools
-Terminal=false
-```
-
-![image-20210205180806792](img/readme/image-20210205180806792.png)
-
-![image-20210205174856836](img/readme/image-20210205174856836.png)
-
-
-
-## **扩展：**
-
-1.  使用google浏览器来完成类似的功能
-
-   针对这个问题，可以使用这种方式来使用
-
-   ```bash
-which google-chrome-stable
-   # /usr/bin/google-chrome-stable
-   # 安装google浏览器后
-   google-chrome-stable --help
-   
-   # 针对这个问题，可以使用这种方式来使用
-   google-chrome-stable --app=https://app.yinxiang.com/Login.action
-   ```
-   
-2. electron-webbox的作用就是将现成的网页应用通过这个软件包包装成类似桌面端的应用，然后在ubuntu中我可以通过ubuntu desktop发布成一个个Ubuntu应用程序。
-
-   /home/tc/.local/share/applications/yinxiangNote.desktop
-
-   或/usr/share/applications/yinxiangNote.desktop
-
-```properties
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=印象笔记
-Icon=/home/tc/.local/share/applications/yinxiangNote-icon.png
-Exec=google-chrome-stable --app='https://app.yinxiang.com/Login.action'
-Comment=ying xiang note;yingxiangnote;印象笔记
-Categories=web tools
-Terminal=false
-
-```
-
-![image-20210205161326514](img/readme/image-20210205161326514.png)
-
-![image-20210205161407478](img/readme/image-20210205161407478.png)
